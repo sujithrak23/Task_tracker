@@ -1,0 +1,14 @@
+{
+    "AllUser":[
+        {
+            "name":"Sujithra",
+            "email":"sujithrakamaraj25@gmail.com",
+            "password":"123456"
+        },
+        {
+            "name":"Supersuji",
+            "email":"sujithraksuper25@gmail.com",
+            "password":"123456" 
+        }
+    ]
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table{
+          font-family: arial, sans-serif;
+          width: 100%;
+        }
+        thead{
+            background-color: skyblue;
+            border: 2px solid blue;
+        }
+        td{
+          border: 2px solid lavender;
+          text-align: left;
+          padding: 20px;
+        }
+        tr:nth-child(even) {
+          background-color: lightgrey;
+        }
+        select{
+            padding: 10px;
+            border-radius: 15px;
+            background-color: lavender;
+        }
+        .vl{
+            height: auto;
+            border: 2px solid gray ;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-top: 90px;
+            border-radius: 15px;
+        }
+        form div {
+            background-color: skyblue;
+            width: 100%;
+            padding: 10px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        form label {
+            font-weight: bold;
+        }
+        form select,
+        form input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button{
+            background-color: lavender;
+            width: 100%;
+            padding: 10px;
+            border: 2px solid purple;
+            border-radius: 5px;
+            cursor: pointer; 
+        }
+        .buttons-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            background-color: white;
+        }
+        </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+</head>
+<body>
+    <hr/>
+    <h1 style="text-align: center;color: gray;background-color: lavender;border: 2px solid purple ;">Task Tracker</h1>
+    <hr/>
+    <div style="display: flex;flex-direction: row;">       
+    
+    <div style="padding: 105px;padding-top: 20px;padding-left: 40px;">
+        <select  id="drops">
+            <option>All</option>
+            <option>Work</option>
+            <option>PersonalWork</option>   
+          </select>
+          <table id="dataTable">
+            <thead>
+                <tr>                                                                                                   
+                    <b>
+                        <td>Category</td>
+                        <td>Sub Category</td>
+                        <td>Duration</td>
+                        <td>Task</td>
+                        <td>Update & Delete</td>
+                    </b>
+                </tr>
+            </thead>
+            <tbody> </tbody>
+        </table>
+    </div>
+
+    <div class="vl"></div>
+    
+    <form name="form">
+        <div style="background-color: skyblue;border: 2px solid blue ;width: 350px;border-radius: 15px;text-align: center;">Add a new task</div>
+        <label>Category</label><br/>
+        <select name="Category">
+            <option>Work</option>
+            <option>PersonalWork</option>
+        </select><br/>
+        <label>Sub Category</label><br/>
+        <input type="text" name="Subcategory" placeholder="enter the sub category"><br/>
+        <label>Duration</label><br/>
+        <input type="text" name="Duration" placeholder="set the timer"><br/>
+        <label>Task</label><br/>
+        <input type="text" name="Tasks" placeholder="enter the task"><br/>
+        <button 
+          style="background-color: #5cb85c;width: 100%;padding: 10px;border:none;cursor: pointer;",
+          type="button",
+          onclick='addTask()'
+          >
+          Submit
+        </button><br/>
+        <hr/>
+        <div class="stopwatch" style="background-color: skyblue;border: 2px solid blue;border-radius: 15px;text-align: center;width: auto;"><b>Stopwatch</b> : 00:00:00</div>
+        <div class="buttons-container">
+            <button id="button" type='button' onclick='startstopwatch()' class="startBtn">Start</button>
+            <button id="button" type='button' onclick="resetwatch()" class="resetBtn">Reset</button>
+        </div>
+    </form>
+</div>   
+    <script src="day1.js"></script>
+</body>
+</html>
